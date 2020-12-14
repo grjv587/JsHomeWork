@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度页面</title>
+    <link rel="stylesheet" type="text/css" href="css/baidu.css"/>
+ 	<script type="text/javascript">
+        var i = 1;
+		function divrefresh(){
+            if(i%2==1){
+                var span=document.getElementById('title1');
+                span.innerHTML = "美国选举人团今日选举出总统";
+                var span=document.getElementById('title2');
+                span.innerHTML = "绥芬河新增2例确诊病例 学校停课";
+                var span=document.getElementById('title3');
+                span.innerHTML = " 美媒:白宫高官将首先接种新冠疫苗";
+                var span=document.getElementById('title4');
+                span.innerHTML = "长江口一船只进水下沉 16人遇险";
+                var span=document.getElementById('title5');
+                span.innerHTML = "云南向伴侣隐瞒艾滋将被追究刑责";
+                var span=document.getElementById('title6');
+                span.innerHTML = "韩国民众给素媛案罪犯家断燃气";
+                ++i;
+            }else{
+                 var span=document.getElementById('title1');
+                span.innerHTML = "深圳首次招录港澳籍公务员";
+                var span=document.getElementById('title2');
+                span.innerHTML = "未来可期！2020励志学子高燃合集";
+                var span=document.getElementById('title3');
+                span.innerHTML = " 北京新增1例境外输入确诊病例";
+                var span=document.getElementById('title4');
+                span.innerHTML = "黑龙江省禁建500米以上摩天楼";
+                var span=document.getElementById('title5');
+                span.innerHTML = "游客凤凰古城租衣服被禁止自拍";
+                var span=document.getElementById('title6');
+                span.innerHTML = "表演艺术家黄宗英去世";
+                ++i;
+            }
+        }
+        function hideLogin(){
+            document.getElementById("bgDiv").style.visibility ="hidden";
+        }
+		function Login(){
+			var bgDiv = document.getElementById("bgDiv");
+			bgDiv.style.visibility="visible";
+		}
+		function check() {
+   			if(document.getElementById("username").value=="") {
+                alert("请输入用户名！");
+                return false;
+            }else if(document.getElementById("password").value=="") {
+                alert("请输入密码！");
+                return false;
+            }else{
+		          if(username.value=="admin"&&password.value=="1"){
+                    alert("登录成功！");
+                	window.location.href="baidu.html";
+				    alert(widow.location);
+                }else{
+                    alert("账号或密码错误！");
+                }
+            }
+        }
+        function over(){
+            document.getElementById("headerHl2Div").style.visibility="visible";
+        }
+        function out(){
+            document.getElementById("headerHl2Div").style.visibility="hidden";
+
+        }
+	</script>
+</head>
+<body>
+	<!-- 头部部分 -->
+	<header id="header">
+		<ul>
+			<li><a href="https://news.qq.com/">新闻</a></li>
+			<li><a href="https://www.hao123.com/">hao123</a></li>
+			<li><a href="https://map.baidu.com/@11590057.96,4489812.75,4z">地图</a></li>
+			<li><a href="https://www.iqiyi.com/">视频</a></li>
+			<li><a href="https://tieba.baidu.com/">贴吧</a></li>
+			<li><a href="https://www.csdn.net/">学术</a></li>
+		</ul> 
+        <ul id="headerHl2">
+            <li>
+                <a href="#" onmouseover="over()" onmouseout="out()" id="overId">设置</a>
+            </li>
+            <li>
+                <a href="#" id="blueRegister" onClick="Login()">登录</a>
+            </li>
+
+        </ul>
+        <div id="headerHl2Div" onmouseover="over()" onmouseout="out()" >
+                    <a href="#">搜索设置</a>
+                    <a href="#">高级搜索</a>
+                    <a href="#">关闭预测</a>
+                    <a href="#">隐私设置</a>
+                    <a href="#">关闭热榜</a>
+                </div>
+        <!-- 登录隐藏部分 -->
+        <div id="bgDiv">
+            <div id="bgDivUnder" >
+                <img src="images/bd_logo1.png" id="bgDivUnderImage">
+                 <input id="buttonX" type="button" value="X" onClick="hideLogin()" />
+                <p id="loginText">
+                    用户名密码登录
+                </p> 
+                <table class="bgDivUnderTable"><br>
+                    <form method="post" action="###" onsubmit="login()">
+                        <tr>
+                            <td>&emsp; &emsp; </td>
+                            <td><input type="text"  placeholder="手机/邮箱/用户名" id="username"/></td>
+                        </tr>
+                        <tr>
+                            <td>&emsp; &emsp; </td>
+                            <td><input type="password" placeholder="密码"  id="password"/></td>
+                        </tr>
+                        <tr>
+                            <td>&emsp; &emsp; </td>
+                            <td><input id="Radio1" type="radio" />下次自动登录</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input class="logingBut" type="button" value="登录" id="checkpost" onClick="check()"/></td>
+                            <td></td>
+                        </tr>
+                    </form>
+                </table>
+                <a href="#" id="forgetpassword">忘记密码?</a>
+                <a href="#" id="register">立即注册</a>
+       		 </div>
+         </div>
+	</header>
+	<!-- 中间内容部分 -->
+	
+		<!-- 上部分 -->
+		<div class="middleDivTop">
+			<form>
+				<img src="images/bd_logo1.png" alt="logo" id="logo">
+				<input type="text" id="inputText">
+				<input type="submit" value="百度一下" id="inputSubmit">
+			</form>
+		</div>
+		<!-- 下部分 -->
+        
+		<div class="middleDivBottom1">
+        	<a href="http://top.baidu.com/?fr=mhd_card" target="_blank">百度热搜</a> 
+            <span onClick="divrefresh()">↻换一换</span>
+        </div>
+       	<div  class="middleDivBottom2">
+            <a href="#">
+            	<span class="num" id="num1">1</span>
+                <span id="title1" class="middleDivBottom2Herf">深圳首次招录港澳籍公务员</span>
+            </a>
+            <a href="#">
+            	<span class="num4" >4</span>
+                <span id="title2" class="middleDivBottom2Herf">未来可期！2020励志学子高燃合集</span>
+            </a>
+            <br><br>
+            <a href="#">
+            	<span class="num" id="num2">2</span>
+                <span id="title3" class="middleDivBottom2Herf">北京新增1例境外输入确诊病例</span>
+            </a>
+            <a href="#">
+            	<span class="num4">5</span>
+                <span id="title4" class="middleDivBottom2Herf">黑龙江省禁建500米以上摩天楼</span>
+            </a>
+            <br><br>       
+            <a href="#">
+            	<span class="num"  id="num3">3</span>
+                <span id="title5" class="middleDivBottom2Herf">游客凤凰古城租衣服被禁止自拍</span>
+            </a>
+            <a href="#">
+            	<span class="num4">6</span>
+                <span id="title6" class="middleDivBottom2Herf">表演艺术家黄宗英去世</span>
+            </a>
+        </div>
+	<!-- 页脚部分 -->
+	<div class="footerDiv">
+		<div class="footerLeft">
+			<p id="pLeft">设为首页</p>
+			<p>关于百度</p>
+			<p>About Baidu</p>
+			<p>百度推广</p>
+			<p>使用百度前必读</p>
+			<p>意见反馈</p>
+			<p>帮助中心</p>
+		</div>
+		<div class="footerRight">
+			<p>©2020 Baidu </p>
+			<p>(京)-经营性-2017-0020</p>
+			<p>京公网安备11000002000001号</p>
+			<p id="pRight">京ICP证030173号</p>
+		</div>
+	</div>
+</body>
+</html>
